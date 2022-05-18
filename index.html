@@ -2,7 +2,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>筋トレ管理</title>
+    <title>ボラクエ受講登録</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
@@ -10,25 +10,37 @@
 <body>
 
     <form class="w-75 mx-auto">
-        <p class="mt-3">名前</p>
+        <p class="mt-3">氏名(漢字）</p>
         <div>
-            <input class="form-control w-100 mt-1" name="name" placeholder="" required>
+            <input class="form-control w-100 mt-1" name="name1" placeholder="" required>
         </div>
-        <p class="mt-3">腕立て</p>
+         <p class="mt-3">しめい（ふりがな）</p>
         <div>
-            <input class="form-control w-100 mt-1" name="udetate" required>
+            <input class="form-control w-100 mt-1" name="name2" placeholder="" required>
         </div>
-        <p class="mt-3">腹筋</p>
+        <p class="mt-3">学校</p>
         <div>
-            <input class="form-control w-100 mt-1" name="fukkin" required>
+            <input class="form-control w-100 mt-1" name="school" required>
         </div>
-        <p class="mt-3">背筋</p>
+        <p class="mt-3">学年</p>
         <div>
-            <input class="form-control w-100 mt-1" name="haikin" required>
+            <input class="form-control w-100 mt-1" name="gakunen" required>
         </div>
-        <p class="mt-3">スクワット</p>
+        <p class="mt-3">年齢</p>
         <div>
-            <input class="form-control w-100 mt-1" name="sukuwat" required>
+            <input class="form-control w-100 mt-1" name="year" required>
+        </div>
+        <p class="mt-3">電話番号</p>
+        <div>
+            <input class="form-control w-100 mt-1" name="tel" required>
+        </div>
+         <p class="mt-3">6/19(土）の開校式に{できる・できない｝</p>
+        <div>
+            <input class="form-control w-100 mt-1" name="syusseki" required>
+        </div>
+        <p class="mt-3">その他質問があればどうぞ</p>
+        <div>
+            <input class="form-control w-200 mt-1" name="shitumon" required>
         </div>
         <input type="submit" class="mt-4 btn btn-primary" value="送信">
     </form>
@@ -71,12 +83,16 @@
 
         $(function () {
             $('form').submit(function () {
-                const name    = $('input[name="name"]').val();
-                const udetate = $('input[name="udetate"]').val();
-                const fukkin  = $('input[name="fukkin"]').val();
-                const haikin  = $('input[name="haikin"]').val();
+                const name1    = $('input[name="name1"]').val();
+　　　　　　　　const name2    = $('input[name="name2"]').val();
+                const school = $('input[name="school"]').val();
+                const gakunen  = $('input[name="gakunen"]').val();
+                const year  = $('input[name="year"]').val();
+                const tel  = $('input[name="tel"]').val();
+         　     const syusseki  = $('input[name="syusseki"]').val();
+         　     const shitumon  = $('input[name="shitumon"]').val();
                 const sukuwat = $('input[name="sukuwat"]').val();
-                const msg = `${name}\n${udetate}\n${fukkin}\n${haikin}\n${sukuwat}`;
+                const msg = `${name1}\n${name2}\n${school}\n${gakunen}\n${year}\n${tel}\n${syusseki}\n${shitumon}`;
                 sendText(msg);
                 return false;
             });
